@@ -20,6 +20,7 @@ import {
   editTeacher,
   GetSingleTeacherHook,
   UpdateTeacherHook,
+  UseUpdate,
 } from "../../utils/CustomQuerHook/CustomQueryHook";
 import PaginationAdd from "../pagination/Pagination";
 
@@ -40,6 +41,7 @@ const TabelComponent = ({
   const [indexs, setIndex] = useState("");
 
   const { mutate, isError } = DeleteTeacherHook();
+  const{isError:editError,mutate:editMutate,isSuccess:editSuccess}=UseUpdate()
 
   const handleClose = () => {
     setOpen(false);
@@ -72,14 +74,16 @@ const TabelComponent = ({
     });
   };
   const handleSubmitEdit = async (values) => {
-    const data = {
-      username: values.userName,
-      lastname: values.lastName,
-      middlename: values.middleName,
-      firstname: values.firstName,
-    };
-    const response = await editTeacher(ids, data);
-    if (response && response?.success) {
+    const data={
+      id:ids,
+      username:values.userName,
+      lastname:values.lastName,
+      middlename:values.middleName,
+      firstname:values.firstName
+
+    }
+    editMutate(data)
+    if (editSuccess && editSuccess) {
       setOpenEdit(false);
       Swal.fire({
         position: "center",

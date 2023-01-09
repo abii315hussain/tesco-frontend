@@ -12,13 +12,10 @@ const getTeacher = async () => {
 const deleteTeacher = async (data) => {
   return await axios.delete(`http://localhost:5000/api/teacher/${data}`);
 };
-export const editTeacher = async (_ids, data) => {
-  const response = await axios.put(
-    `http://localhost:5000/api/teacher/${_ids}`,
-    data
-  );
-  return await response.data;
-};
+const editTeacher=async(body)=>{
+  const response= await axios.put(`http://localhost:5000/api/teacher`,body)
+  return response.data
+}
 const getSingleTeacher = async (data) => {
   return await axios.get(`http://localhost:5000/api/teacher/${data}`);
 };
@@ -58,6 +55,13 @@ export const UpdateTeacherHook = () => {
     onError: ({ message }) => {},
   });
 };
+export const UseUpdate=()=>{
+  return useMutation(
+    (variables) => {
+      return axios.put('http://localhost:5000/api/teacher', variables);
+    }
+  );
+}
 export const GetSingleTeacherHook = (onSuccess, onError) => {
   return useQuery("teacher-single-data", getSingleTeacher, {
     onSuccess,

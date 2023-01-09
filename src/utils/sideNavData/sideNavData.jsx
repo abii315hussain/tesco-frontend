@@ -76,19 +76,22 @@ export const sideNavDatas = [
     type:false
   },
 
+  // {
+  //   label: "Topics",
+  //   image: arrowRightImage,
+  // icon:<ArrowRightOutlinedIcon sx={{fontSize:"2em",color:"white"}}/>,
+  //   values: "topic-teacher",
+  //   type:false
+  // },
   {
-    label: "Topics",
-    image: arrowRightImage,
-  icon:<ArrowRightOutlinedIcon sx={{fontSize:"2em",color:"white"}}/>,
-    values: "topic-teacher",
-    type:false
-  },
-  {
-    label: "Questionnaires",
+    label: "Questions",
     image: QuestionsImage,
-    icon:<QuestionMarkIcon sx={{fontSize:"2em",color:"white"}}/>,
-    values: "question-teacher",
-    type:false
+    icon:<ArrowRightOutlinedIcon  sx={{fontSize:"2em",color:"white"}}/>,
+    values: {
+      value1:"topic-teacher",
+      value2:"question-teacher"
+    },
+    type:true
   },
 
   {

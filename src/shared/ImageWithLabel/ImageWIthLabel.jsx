@@ -117,7 +117,7 @@ const ImageWIthLabel = ({
               paddingTop={"0.5em"}
               paddingLeft={"2em"}
             >
-               <Link to={!subType?`/${setpath.value1}`:`/dashboard/${setpath}`} style={{ textDecoration: "none" }}>
+               <Link to={!subType?`/${setpath.value1}`:`/dashboard/${setpath.value1}`} style={{ textDecoration: "none" }}>
                 <motion.div
                   style={{ display: "flex",alignItems:"center"}}
                   initial={{ y: -5, opacity: 0 }}
@@ -141,7 +141,7 @@ const ImageWIthLabel = ({
                 </motion.div>
               </Link>
 
-              <Link to={!subType?`/${setpath.value2}`:`/dashboard/${setpath}`} style={{ textDecoration: "none" }}>
+              <Link to={!subType?`/${setpath.value2}`:`/dashboard/${setpath.value2}`} style={{ textDecoration: "none" }}>
                 <motion.div
                   style={{ display: "flex",alignItems:"center"}}
                   initial={{ y: -5, opacity: 0 }}
